@@ -37,7 +37,7 @@ function Janine() {
     );
 }
 
-// 4a
+// 4a (auto complete the elements div>ul>li*3^p) instead of 3 uls should be ul with 3 li inside.
 function MassHysteria() {
     return (<div>
         <ul>"Fire and brimstone coming down from the skies! Rivers and seas boiling!"</ul>
@@ -68,11 +68,11 @@ function ToolsTalent() {
     );
 }
 
-// 7a
+// 7a (Commas not needed here but are needed in render)
 function GhostbustersAll() {
     return (<div>
         <Ghostbusters />,
-        < Tagline />,
+        <Tagline />,
         <Janine />,
         <MassHysteria />,
         <GhostbustersLogo />,
@@ -83,20 +83,24 @@ function GhostbustersAll() {
 
 // 8a
 function DiceRoll (){
-    // 8b
-    let die1 = Math.floor(Math.random () *6 + 1);
+    // 8b the +1 should be outside the parentheses (what I did)
+    // let die1 = Math.floor(Math.random () *6 + 1);
+    let die1 = Math.floor(Math.random () *6) + 1;
     // 8c
-    let die2 = Math.floor(Math.random () *6 + 1);
+    let die2 = Math.floor(Math.random () *6)+ 1;
     
-        // 8d
-           if (die1 ===1 && die2 ===1){
-         return ( 
-         <div> <h1>SNAKE EYES</h1>
-            else {
-                <h1></h1>
-           }</div>
-        
-    );
-        }
+        // // 8d how I started
+        //    if (die1 ===1 && die2 ===1){
+        //  return ( 
+        //  <div> <h1>SNAKE EYES</h1>
+        //     else {
+        //         <h1></h1>
+        //    }</div>
+
+        return(
+            <div>
+                <h1>{(die1 ===1 && die2 ===1) ? `SNAKE EYES` : `${die1} & ${die2}`}</h1>
+            </div>
+        );  
+    }
   
-}
